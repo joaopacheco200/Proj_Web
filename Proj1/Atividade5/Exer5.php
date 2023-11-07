@@ -24,14 +24,23 @@ $timeB = $_POST['TimeB'];
 $golsA = $_POST['GolsA'];
 $golsB = $_POST['GolsB'];
 
+if (!empty($_POST["TimeA"]) && isset($_POST["TimeA"])
+&& !empty($_POST["TimeB"]) && isset($_POST["TimeB"])) {
+
+
+
 if($golsA > $golsB){
     echo"O $timeA ganhou de $golsA a $golsB do $timeB";
 }else if($golsB > $golsA){
     echo"O $timeB ganhou de $golsB a $golsA do $timeA";
 
-}else if($golsA = $golsB) {
+}else  {
     echo"O jogo terminou com o placar de $golsA a $golsB";
 
+}
+}else {
+    echo"Arruma esse TRECO!!";
+    header("refresh: 3, Form5.php");
 }
 
 ?>
